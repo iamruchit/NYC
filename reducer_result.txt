@@ -1,0 +1,20 @@
+def reducer():
+    
+    Entrytotal=0
+    oldkey=None
+    for line in sys.stdin:
+        # your code here
+        data_mapped=line.strip().split("\t")
+        if len(data_mapped)!=2:
+          continue
+        thiskey, thisentry = data_mapped
+        if oldkey and oldkey!=thiskey:
+            print("%s\t%s"%oldkey,entrytotal)
+            entrytotal=0
+        oldkey = thiskey
+        entrytotal+=float(thisentry)
+        
+        
+reducer()
+sys.stdin = open('turnstile_data_master_with_weather.csv')
+sys.stdout = open('reducer_result.txt', 'w')
