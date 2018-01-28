@@ -1,0 +1,2 @@
+Hadoop: The definitive Guide: to understand hdfs and map reduce
+Python Tutorial to write the code where i was stuck
